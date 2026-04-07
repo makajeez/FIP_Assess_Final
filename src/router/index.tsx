@@ -113,7 +113,7 @@ createBrowserRouter([
     element: <RootLayout />,   // mounted first, before any child
     children: [
       { path: '/login', element: <PublicOnly><LoginPage /></PublicOnly> },
-      { path: '/student', element: <RequireStudent><StudentLayout /></RequireStudent>, children: [...] },
+      { path: '/student', element: <RequireStudent><StudentLayout /></RequireStudent>, children: [] },
       // etc.
     ]
   }
