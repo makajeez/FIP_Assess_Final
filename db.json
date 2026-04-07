@@ -1,0 +1,226 @@
+{
+  "students": [
+    {
+      "id": "s1",
+      "name": "Buhari Ahmed Alhassan",
+      "matric": "21/CSC/001",
+      "program": "B.Sc. Computer Science",
+      "faculty": "Computing & IT",
+      "level": "400",
+      "entryYear": "2021"
+    }
+  ],
+  "courses": [
+    {
+      "id": "c1",
+      "code": "CSC101",
+      "title": "Introduction to Computer Science",
+      "units": 3,
+      "grade": "A",
+      "semester": "2021/1",
+      "studentId": "s1"
+    },
+    {
+      "id": "c2",
+      "code": "MTH101",
+      "title": "Calculus I",
+      "units": 4,
+      "grade": "B",
+      "semester": "2021/1",
+      "studentId": "s1"
+    },
+    {
+      "id": "c3",
+      "code": "ENG101",
+      "title": "Technical Writing",
+      "units": 2,
+      "grade": "A",
+      "semester": "2021/1",
+      "studentId": "s1"
+    },
+    {
+      "id": "c4",
+      "code": "PHY101",
+      "title": "Physics I",
+      "units": 3,
+      "grade": "B",
+      "semester": "2021/1",
+      "studentId": "s1"
+    },
+    {
+      "id": "c5",
+      "code": "CSC201",
+      "title": "Data Structures & Algorithms",
+      "units": 3,
+      "grade": "A",
+      "semester": "2021/2",
+      "studentId": "s1"
+    },
+    {
+      "id": "c6",
+      "code": "MTH201",
+      "title": "Calculus II",
+      "units": 4,
+      "grade": "B",
+      "semester": "2021/2",
+      "studentId": "s1"
+    },
+    {
+      "id": "c7",
+      "code": "CSC202",
+      "title": "Discrete Mathematics",
+      "units": 3,
+      "grade": "A",
+      "semester": "2021/2",
+      "studentId": "s1"
+    },
+    {
+      "id": "c8",
+      "code": "PHY201",
+      "title": "Physics II",
+      "units": 3,
+      "grade": "C",
+      "semester": "2021/2",
+      "studentId": "s1"
+    },
+    {
+      "id": "c9",
+      "code": "CSC301",
+      "title": "Algorithm Design & Analysis",
+      "units": 3,
+      "grade": "A",
+      "semester": "2022/1",
+      "studentId": "s1"
+    },
+    {
+      "id": "c10",
+      "code": "CSC302",
+      "title": "Database Management Systems",
+      "units": 3,
+      "grade": "A",
+      "semester": "2022/1",
+      "studentId": "s1"
+    },
+    {
+      "id": "c11",
+      "code": "NET301",
+      "title": "Computer Networks",
+      "units": 3,
+      "grade": "B",
+      "semester": "2022/1",
+      "studentId": "s1"
+    },
+    {
+      "id": "c12",
+      "code": "MTH301",
+      "title": "Linear Algebra",
+      "units": 3,
+      "grade": "B",
+      "semester": "2022/1",
+      "studentId": "s1"
+    },
+    {
+      "id": "c13",
+      "code": "CSC401",
+      "title": "Operating Systems",
+      "units": 3,
+      "grade": "A",
+      "semester": "2022/2",
+      "studentId": "s1"
+    },
+    {
+      "id": "c14",
+      "code": "CSC402",
+      "title": "Software Engineering",
+      "units": 3,
+      "grade": "A",
+      "semester": "2022/2",
+      "studentId": "s1"
+    },
+    {
+      "id": "c15",
+      "code": "CSC403",
+      "title": "Computer Architecture",
+      "units": 3,
+      "grade": "B",
+      "semester": "2022/2",
+      "studentId": "s1"
+    },
+    {
+      "id": "c16",
+      "code": "CSC404",
+      "title": "Cybersecurity Fundamentals",
+      "units": 3,
+      "grade": "A",
+      "semester": "2022/2",
+      "studentId": "s1"
+    }
+  ],
+  "requests": [
+    {
+      "id": "r1",
+      "studentId": "s1",
+      "studentName": "Buhari Abdullahi",
+      "matric": "21/CSC/001",
+      "program": "B.Sc. Computer Science",
+      "level": "400",
+      "purpose": "Employment",
+      "date": "2025-04-01",
+      "status": "approved",
+      "adminNote": "Approved for employer. Official seal applied.",
+      "documentId": "TRX-AB1C2D"
+    },
+    {
+      "id": "r2",
+      "studentId": "s2",
+      "studentName": "Aisha Sule",
+      "matric": "22/CSC/044",
+      "program": "B.Sc. Computer Science",
+      "level": "300",
+      "purpose": "Postgraduate",
+      "date": "2025-04-03",
+      "status": "approved",
+      "adminNote": "",
+      "documentId": "TRX-AV4QCZVB"
+    },
+    {
+      "id": "r3",
+      "studentId": "s3",
+      "studentName": "Ibrahim Musa",
+      "matric": "21/EEE/018",
+      "program": "B.Eng. Electrical Engineering",
+      "level": "400",
+      "purpose": "Scholarship",
+      "date": "2025-04-03",
+      "status": "approved",
+      "adminNote": "",
+      "documentId": "TRX-N66NY4UG"
+    },
+    {
+      "id": "r4",
+      "studentId": "s4",
+      "studentName": "Fatima Yusuf",
+      "matric": "23/BUS/007",
+      "program": "B.Sc. Business Administration",
+      "level": "200",
+      "purpose": "Transfer",
+      "date": "2025-04-04",
+      "status": "rejected",
+      "adminNote": "Missing course load form. Please resubmit.",
+      "documentId": ""
+    },
+    {
+      "id": "r5",
+      "studentId": "s5",
+      "studentName": "Musa Bello",
+      "matric": "22/MAS/011",
+      "program": "B.Sc. Mathematics",
+      "level": "300",
+      "purpose": "Employment",
+      "date": "2025-04-04",
+      "status": "rejected",
+      "adminNote": "",
+      "documentId": "TRX-77NGJ9UX"
+    }
+  ]
+}
