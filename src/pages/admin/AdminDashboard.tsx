@@ -87,8 +87,8 @@ export default function AdminDashboard() {
           <div className="space-y-2">
             {[
               { to: '/admin/queue',         label: 'Review Queue',       sub: `${pendingCount} pending` },
-              // { to: '/admin/transcript',    label: 'Transcript Preview', sub: 'Preview & export PDF' },
-              // { to: '/admin/gpa',           label: 'GPA Lookup',         sub: 'View student CGPA' },
+              { to: '/admin/transcript',    label: 'Transcript Preview', sub: 'Preview & export PDF' },
+              { to: '/admin/gpa',           label: 'GPA Lookup',         sub: 'View student CGPA' },
               { to: '/admin/control-panel', label: 'Control Panel',      sub: 'Manage users & roles' },
             ].map((a) => (
               <Link

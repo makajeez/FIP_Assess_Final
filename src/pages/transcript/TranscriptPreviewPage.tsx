@@ -68,7 +68,7 @@ export default function TranscriptPreviewPage() {
             <span className="text-[9px] font-black tracking-tight text-center leading-tight">ABU<br/>1962</span>
           </div>
           <h1 className="text-[17px] font-serif font-semibold text-ink-900 tracking-wide">
-            Ahmadu Bello University, Kano
+            Ahmadu Bello University, Zaria
           </h1>
           <p className="text-xs text-ink-500 mt-0.5">Office of the Registrar — Official Academic Transcript</p>
         </div>
@@ -169,7 +169,7 @@ export default function TranscriptPreviewPage() {
 
         {/* Footer */}
         <div className="mt-4 pt-3 border-t border-ink-100 text-center text-[9.5px] text-ink-400 leading-relaxed">
-          Issued by the Registry Division, Ahmadu Bello University, Kano, Nigeria.<br />
+          Issued by the Registry Division, Ahmadu Bello University, Zaria, Nigeria.<br />
           Any alteration or defacement renders this transcript void and invalid.<br />
           <strong>Grading Scale:</strong> A (70–100, GP 5) · B (60–69, GP 4) · C (50–59, GP 3) · D (45–49, GP 2) · E (40–44, GP 1) · F (0–39, GP 0)
         </div>

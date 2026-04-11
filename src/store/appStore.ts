@@ -27,7 +27,7 @@ interface AppState {
 
 const INITIAL_FILTERS: RequestFilters = { status: 'all', program: '', year: '', search: '' }
 
-export const useAppStore = create<AppState>((set) => ({
+export const useAppStore = create<AppState>((set, get) => ({
   currentStudent: null,
   courses: [],
   requests: [],

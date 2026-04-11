@@ -172,8 +172,8 @@ export function AdminLayout() {
 
       <NavSection label="Registry">
         <NavItem to="/admin/queue"      icon={icons.queue}      label="Review Queue" badge={badge} />
-        {/* <NavItem to="/admin/transcript" icon={icons.transcript} label="Transcript Preview" /> */}
-        {/* <NavItem to="/admin/gpa"        icon={icons.gpa}        label="GPA Lookup" /> */}
+        <NavItem to="/admin/transcript" icon={icons.transcript} label="Transcript Preview" />
+        <NavItem to="/admin/gpa"        icon={icons.gpa}        label="GPA Lookup" />
       </NavSection>
 
       {/* Control panel only for superadmin */}

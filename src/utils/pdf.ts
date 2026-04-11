@@ -78,7 +78,7 @@ function buildTranscriptHTML(data: TranscriptData): string {
   <div class="watermark">OFFICIAL</div>
   <div class="header">
     <div class="seal">ABU<br>1962</div><br>
-    <div class="uni-name">Ahmadu Bello University, Kano</div>
+    <div class="uni-name">Ahmadu Bello University, Zaria</div>
     <div class="doc-sub">Office of the Registrar — Official Academic Transcript</div>
   </div>
 
@@ -129,7 +129,7 @@ function buildTranscriptHTML(data: TranscriptData): string {
   </div>
 
   <div class="footer-note">
-    This document is issued by the Registry Division, Ahmadu Bello University, Kano, Nigeria.<br>
+    This document is issued by the Registry Division, Ahmadu Bello University, Zaria, Nigeria.<br>
     Any alteration, erasure, or defacement renders this transcript void and invalid.<br>
     Grading Scale: A (70–100, GP 5) · B (60–69, GP 4) · C (50–59, GP 3) · D (45–49, GP 2) · E (40–44, GP 1) · F (0–39, GP 0)
   </div>
