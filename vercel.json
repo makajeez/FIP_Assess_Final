@@ -1,5 +1,9 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/api/users/:id*",    "destination": "/api/users" },
+    { "source": "/api/students/:id*", "destination": "/api/students" },
+    { "source": "/api/courses/:id*",  "destination": "/api/courses" },
+    { "source": "/api/requests/:id*", "destination": "/api/requests" },
+    { "source": "/(.*)",              "destination": "/index.html" }
   ]
 }

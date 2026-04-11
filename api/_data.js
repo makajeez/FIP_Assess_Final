@@ -1,0 +1,79 @@
+// ── Shared helpers ────────────────────────────────────────────────────────────
+
+function generateId(prefix) {
+  return prefix + Math.random().toString(36).slice(2, 10)
+}
+
+function cors(res) {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE,OPTIONS')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+}
+
+function json(res, status, data) {
+  cors(res)
+  res.status(status).json(data)
+}
+
+// Extract the last path segment as an id, excluding the resource name itself.
+// e.g. /api/users/u1  -> 'u1'
+//      /api/users      -> null
+//      /api/users/     -> null
+function extractId(req, resourceName) {
+  const path = req.url.split('?')[0].replace(/\/$/, '')
+  const parts = path.split('/')
+  const last = parts[parts.length - 1]
+  // If the last segment IS the resource name (collection endpoint), no id
+  if (!last || last === resourceName) return null
+  return last
+}
+
+// ── Seed data ────────────────────────────────────────────────────────────────
+
+const users = [
+  { id: 'u1', name: 'Super Admin',     email: 'superadmin@abu.edu.ng',     password: 'superadmin123', role: 'superadmin', status: 'active',           studentId: null, createdAt: '2024-01-01', lastLogin: '2025-04-04', avatarInitials: 'SA' },
+  { id: 'u2', name: 'Registry Admin',  email: 'admin@abu.edu.ng',          password: 'admin123',      role: 'admin',      status: 'active',           studentId: null, createdAt: '2024-01-10', lastLogin: '2025-04-03', avatarInitials: 'RA' },
+  { id: 'u3', name: 'Buhari Abdullahi',email: 'buhari@student.abu.edu.ng', password: 'student123',    role: 'student',    status: 'active',           studentId: 's1', createdAt: '2024-09-01', lastLogin: '2025-04-04', avatarInitials: 'BA' },
+  { id: 'u4', name: 'Aisha Sule',      email: 'aisha@student.abu.edu.ng',  password: 'student123',    role: 'student',    status: 'active',           studentId: 's2', createdAt: '2024-09-01', lastLogin: '2025-04-03', avatarInitials: 'AS' },
+  { id: 'u5', name: 'Ibrahim Musa',    email: 'ibrahim@student.abu.edu.ng',password: 'student123',    role: 'student',    status: 'active',           studentId: 's3', createdAt: '2024-09-01', lastLogin: '2025-04-02', avatarInitials: 'IM' },
+  { id: 'u6', name: 'Fatima Yusuf',    email: 'fatima@student.abu.edu.ng', password: 'student123',    role: 'student',    status: 'suspended',        studentId: 's4', createdAt: '2024-09-01', lastLogin: '2025-03-28', avatarInitials: 'FY' },
+  { id: 'u7', name: 'Musa Bello',      email: 'musa@student.abu.edu.ng',   password: 'student123',    role: 'student',    status: 'pending_approval', studentId: 's5', createdAt: '2025-04-01', lastLogin: null,         avatarInitials: 'MB' },
+  { id: 'u8', name: 'Hauwa Ismail',    email: 'hauwa@abu.edu.ng',          password: 'admin123',      role: 'admin',      status: 'pending_approval', studentId: null, createdAt: '2025-04-02', lastLogin: null,         avatarInitials: 'HI' },
+]
+
+const students = [
+  { id: 's1', name: 'Buhari Abdullahi', matric: '21/CSC/001', program: 'B.Sc. Computer Science',        faculty: 'Computing & IT',      level: '400', entryYear: '2021' },
+  { id: 's2', name: 'Aisha Sule',       matric: '22/CSC/044', program: 'B.Sc. Computer Science',        faculty: 'Computing & IT',      level: '300', entryYear: '2022' },
+  { id: 's3', name: 'Ibrahim Musa',     matric: '21/EEE/018', program: 'B.Eng. Electrical Engineering', faculty: 'Engineering',         level: '400', entryYear: '2021' },
+  { id: 's4', name: 'Fatima Yusuf',     matric: '23/BUS/007', program: 'B.Sc. Business Administration', faculty: 'Management Sciences', level: '200', entryYear: '2023' },
+  { id: 's5', name: 'Musa Bello',       matric: '22/MAS/011', program: 'B.Sc. Mathematics',             faculty: 'Science',             level: '300', entryYear: '2022' },
+]
+
+const courses = [
+  { id: 'c1',  code: 'CSC101', title: 'Introduction to Computer Science',  units: 3, grade: 'A', semester: '2021/1', studentId: 's1' },
+  { id: 'c2',  code: 'MTH101', title: 'Calculus I',                         units: 4, grade: 'B', semester: '2021/1', studentId: 's1' },
+  { id: 'c3',  code: 'ENG101', title: 'Technical Writing',                  units: 2, grade: 'A', semester: '2021/1', studentId: 's1' },
+  { id: 'c4',  code: 'PHY101', title: 'Physics I',                          units: 3, grade: 'B', semester: '2021/1', studentId: 's1' },
+  { id: 'c5',  code: 'CSC201', title: 'Data Structures & Algorithms',       units: 3, grade: 'A', semester: '2021/2', studentId: 's1' },
+  { id: 'c6',  code: 'MTH201', title: 'Calculus II',                        units: 4, grade: 'B', semester: '2021/2', studentId: 's1' },
+  { id: 'c7',  code: 'CSC202', title: 'Discrete Mathematics',               units: 3, grade: 'A', semester: '2021/2', studentId: 's1' },
+  { id: 'c8',  code: 'PHY201', title: 'Physics II',                         units: 3, grade: 'C', semester: '2021/2', studentId: 's1' },
+  { id: 'c9',  code: 'CSC301', title: 'Algorithm Design & Analysis',        units: 3, grade: 'A', semester: '2022/1', studentId: 's1' },
+  { id: 'c10', code: 'CSC302', title: 'Database Management Systems',        units: 3, grade: 'A', semester: '2022/1', studentId: 's1' },
+  { id: 'c11', code: 'NET301', title: 'Computer Networks',                  units: 3, grade: 'B', semester: '2022/1', studentId: 's1' },
+  { id: 'c12', code: 'MTH301', title: 'Linear Algebra',                     units: 3, grade: 'B', semester: '2022/1', studentId: 's1' },
+  { id: 'c13', code: 'CSC401', title: 'Operating Systems',                  units: 3, grade: 'A', semester: '2022/2', studentId: 's1' },
+  { id: 'c14', code: 'CSC402', title: 'Software Engineering',               units: 3, grade: 'A', semester: '2022/2', studentId: 's1' },
+  { id: 'c15', code: 'CSC403', title: 'Computer Architecture',              units: 3, grade: 'B', semester: '2022/2', studentId: 's1' },
+  { id: 'c16', code: 'CSC404', title: 'Cybersecurity Fundamentals',         units: 3, grade: 'A', semester: '2022/2', studentId: 's1' },
+]
+
+const requests = [
+  { id: 'r1', studentId: 's1', studentName: 'Buhari Abdullahi', matric: '21/CSC/001', program: 'B.Sc. Computer Science',        level: '400', purpose: 'Employment',   date: '2025-04-01', status: 'approved', adminNote: 'Approved for employer. Official seal applied.', documentId: 'TRX-AB1C2D' },
+  { id: 'r2', studentId: 's2', studentName: 'Aisha Sule',       matric: '22/CSC/044', program: 'B.Sc. Computer Science',        level: '300', purpose: 'Postgraduate', date: '2025-04-03', status: 'pending',  adminNote: '', documentId: '' },
+  { id: 'r3', studentId: 's3', studentName: 'Ibrahim Musa',     matric: '21/EEE/018', program: 'B.Eng. Electrical Engineering', level: '400', purpose: 'Scholarship',  date: '2025-04-03', status: 'pending',  adminNote: '', documentId: '' },
+  { id: 'r4', studentId: 's4', studentName: 'Fatima Yusuf',     matric: '23/BUS/007', program: 'B.Sc. Business Administration', level: '200', purpose: 'Transfer',     date: '2025-04-04', status: 'rejected', adminNote: 'Missing course load form. Please resubmit.', documentId: '' },
+  { id: 'r5', studentId: 's5', studentName: 'Musa Bello',       matric: '22/MAS/011', program: 'B.Sc. Mathematics',             level: '300', purpose: 'Employment',   date: '2025-04-04', status: 'pending',  adminNote: '', documentId: '' },
+]
+
+module.exports = { users, students, courses, requests, generateId, cors, json, extractId }
