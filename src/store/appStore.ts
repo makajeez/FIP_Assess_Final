@@ -27,7 +27,9 @@ interface AppState {
 
 const INITIAL_FILTERS: RequestFilters = { status: 'all', program: '', year: '', search: '' }
 
-export const useAppStore = create<AppState>((set, get) => ({
+// ── Fix: remove unused `get` parameter — Vercel build fails with
+//    noUnusedParameters:true when `get` is declared but never referenced. ────
+export const useAppStore = create<AppState>((set) => ({
   currentStudent: null,
   courses: [],
   requests: [],
@@ -97,7 +99,6 @@ export const useAppStore = create<AppState>((set, get) => ({
 
   clearError: () => set({ error: null }),
 
-  // Called on logout to clear student-specific data
   reset: () =>
     set({
       currentStudent: null,
@@ -108,7 +109,7 @@ export const useAppStore = create<AppState>((set, get) => ({
     }),
 }))
 
-// Selectors
+// ── Selectors ────────────────────────────────────────────────────────────────
 export const selectPendingCount = (s: AppState) =>
   s.requests.filter((r) => r.status === 'pending').length
 
